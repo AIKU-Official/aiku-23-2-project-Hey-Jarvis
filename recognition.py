@@ -198,8 +198,9 @@ def execute_command(command,api):
 
         start = datetime.today().hour - 2
         end = datetime.today().hour - 1
+        stn = args.pop()
         url = "https://apihub.kma.go.kr/api/typ01/url/kma_sfctm3.php?tm1=" + str(start) + "&tm2=" + str(
-            end) + "&stn=" + str(station_dict[args]) + "&help=0&authKey=" + weather_authKey
+            end) + "&stn=" + str(station_dict[stn]) + "&help=0&authKey=" + weather_authKey
         r = requests.get(url)
         text = r.text.split('\n')[-3].split()
 
