@@ -54,7 +54,7 @@ record_length_h=set([str(i)+"시간" for i in range(1,24)])
 
 station_dict={'서울':108, "원주":114, '동해':106, '대전':133, "안동":136, '전주':146, '대구':143, '광주':156, '부산':159, '여수':168}
 station=set(station_dict.keys())
-weather_commands={'날씨', '알려줘'}
+weather_commands={'알려줘', '찾아줘', '검색해줘'}
 weather_station=station
 
 #TODO: 모델 다운로드를 마치면 API를 사용하지 않고 직접 훈련한 모델을 이용할 것
@@ -159,7 +159,7 @@ def check_command(text):
 
         duration=sec+min*60+hour*3600
         return (1,duration)
-    elif result & weather_commands:
+    elif result & weather_commands and result & {'날씨'} :
         return (2,result & weather_station)
     else:
         return 0
