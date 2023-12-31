@@ -38,19 +38,35 @@ Hey, Jarvis 프로젝트는 위 네 과정을 구현하였고, 각각의 과정�
    [XTTS-v2](https://huggingface.co/coqui/XTTS-v2) 모델을 이용했습니다. </br>  6초의 음성으로 특정 목소리로 TTS 모델을 학습시킵니다. </br>
    API와 모델을 모두 이용할 수 있는데, 여기서는 API를 활용했습니다.
 
+4. 구현</br>
+   최대한 속도를 올리는 방향으로 구현했습니다. 구현된 기능은 총 세 가지입니다.</br>
+   - 날씨 묻기</br>
+     특정 도시의 날씨를 알려줍니다. 기상청 API 허브를 이용하여 구현했습니다.
+   - 화면 녹화</br>
+     일정 시간동안 화면을 녹화해줍니다. 현재 프레임은 10정도로 제한됩니다.
+   - gpt 질의</br>
+     gpt로 질의합니다.
+
+
 ## 환경 설정
-Requirements.txt에 기록되어 있습니다.
+Python 3.11을 기준으로 만들었습니다.
+설치해야 하는 패키지들은 requirements.txt에 기록되어 있습니다.
+
 
 ## 사용 방법
+1. 기상청 api 허브의 api키, gpt의 api 키와 picovoice의 api 키를 준비합니다.
+2. ```pip install requirements```
+3. ```python recognition --weather_api 날씨 api --openai_api gpt api ----porcupine_api picovoice api```
 
-(프로젝트 실행 방법 (명령어 등)을 적어주세요.)
 
 ## 예시 결과
+GUI 없이 구현했습니다.
 
-(사용 방법을 실행했을 때 나타나는 결과나 시각화 이미지를 보여주세요)
 
 ## 팀원
 
-(프로젝트에 참여한 팀원의 이름과 깃헙 프로필 링크, 역할을 작성해주세요)
+- [박수빈](https://github.com/subin9): VAD, TTS, STT, 날씨 구현
 
-- [홍길동](홍길동의 github link): (수행한 역할을 나열)
+- [장지윤](https://github.com/chiefJang): GPT retrieval 코드 작성
+
+- [김정우](https://github.com/kmjnwn): 폴더 이동 구현, IO exception handling
