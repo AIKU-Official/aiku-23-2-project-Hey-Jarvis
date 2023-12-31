@@ -55,8 +55,8 @@ Python 3.11을 기준으로 만들었습니다.
 
 ## 사용 방법
 1. 기상청 api 허브의 api키, gpt의 api 키와 picovoice의 api 키를 준비합니다.
-2. ```pip install requirements```
-3. ```python recognition --weather_api 날씨 api --openai_api gpt api ----porcupine_api picovoice api```
+2. ```pip install -r requirements.txt```
+3. ```python recognition.py --weather_api 날씨 api --openai_api gpt api --porcupine_api picovoice api```
 
 
 ## 예시 결과
